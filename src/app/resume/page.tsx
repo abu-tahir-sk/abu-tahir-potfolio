@@ -23,15 +23,15 @@ export default async function ResumePage() {
   const title = settings?.professionalTitle || "Full-Stack Web Developer";
 
   return (
-    <div className="min-h-screen flex flex-col bg-[#0B0B14] text-[#F5F5FA]">
+    <div className="min-h-screen flex flex-col bg-[var(--bg-main)] text-[var(--text-main)] transition-colors duration-200">
       <Navbar />
 
       <main className="flex-1 pt-32 pb-24">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Header */}
           <div className="text-center max-w-2xl mx-auto mb-12 space-y-4">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#15182A] border border-[#6C63FF]/30 text-xs font-mono text-[#38BDF8]">
-              <Sparkles className="w-3.5 h-3.5 text-[#6C63FF]" />
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#15182A] border border-[#7C3AED]/30 text-xs font-mono text-[#38BDF8]">
+              <Sparkles className="w-3.5 h-3.5 text-[#7C3AED]" />
               <span>CURRICULUM VITAE</span>
             </div>
             <h1 className="text-4xl sm:text-5xl font-extrabold text-[#F5F5FA] tracking-tight">
@@ -46,7 +46,7 @@ export default async function ResumePage() {
                 <a
                   href={resumeUrl}
                   download="Abu-Tahir-Sk-Resume.pdf"
-                  className="button-primary text-xs px-6 py-3 rounded-xl inline-flex items-center gap-2 font-medium shadow-lg shadow-[#6C63FF]/20"
+                  className="button-primary text-xs px-6 py-3 rounded-xl inline-flex items-center gap-2 font-medium shadow-lg shadow-[#7C3AED]/25"
                 >
                   <Download className="w-4 h-4" />
                   <span>Download Resume (PDF)</span>
@@ -60,7 +60,7 @@ export default async function ResumePage() {
             <div className="card-surface rounded-2xl overflow-hidden border border-white/10 shadow-2xl">
               <div className="p-4 bg-[#101322] border-b border-white/10 flex items-center justify-between">
                 <div className="flex items-center gap-2 text-xs font-mono text-[#A0A3B8]">
-                  <FileText className="w-4 h-4 text-[#6C63FF]" />
+                  <FileText className="w-4 h-4 text-[#7C3AED]" />
                   <span>{name} - Resume.pdf</span>
                 </div>
                 <a
@@ -83,7 +83,7 @@ export default async function ResumePage() {
             </div>
           ) : (
             <div className="card-surface p-12 rounded-2xl border border-white/10 text-center space-y-4 max-w-lg mx-auto">
-              <AlertCircle className="w-10 h-10 text-[#6C63FF] mx-auto opacity-70" />
+              <AlertCircle className="w-10 h-10 text-[#7C3AED] mx-auto opacity-70" />
               <h3 className="text-xl font-bold text-[#F5F5FA]">Resume Update in Progress</h3>
               <p className="text-xs text-[#A0A3B8] leading-relaxed">
                 The latest version of the resume is currently being updated. In the meantime, feel free to explore projects or connect directly.

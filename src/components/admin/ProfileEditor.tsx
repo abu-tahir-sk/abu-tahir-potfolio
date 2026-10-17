@@ -123,7 +123,7 @@ export function ProfileEditor({ initialSettings }: ProfileEditorProps) {
                 type="text"
                 value={formData.profileImageUrl || ""}
                 onChange={(e) => setFormData({ ...formData, profileImageUrl: e.target.value })}
-                className="w-full px-3 py-1.5 rounded-lg bg-[#101322] border border-white/10 text-xs font-mono text-[#F5F5FA] focus:outline-none focus:ring-1 focus:ring-[#6C63FF]"
+                className="w-full px-3 py-1.5 rounded-lg bg-[#101322] border border-white/10 text-xs font-mono text-[#F5F5FA] focus:outline-none focus:ring-1 focus:ring-[#7C3AED]"
               />
             </div>
           </div>
@@ -138,7 +138,7 @@ export function ProfileEditor({ initialSettings }: ProfileEditorProps) {
                 type="text"
                 value={formData.availabilityStatus}
                 onChange={(e) => setFormData({ ...formData, availabilityStatus: e.target.value })}
-                className="w-full px-3 py-2 rounded-xl bg-[#101322] border border-white/10 text-xs text-[#F5F5FA] focus:outline-none focus:ring-2 focus:ring-[#6C63FF]"
+                className="w-full px-3 py-2 rounded-xl bg-[#101322] border border-white/10 text-xs text-[#F5F5FA] focus:outline-none focus:ring-2 focus:ring-[#7C3AED]"
               />
             </div>
           </div>
@@ -157,7 +157,7 @@ export function ProfileEditor({ initialSettings }: ProfileEditorProps) {
                   required
                   value={formData.fullName}
                   onChange={(e) => setFormData({ ...formData, fullName: e.target.value })}
-                  className="w-full px-4 py-2.5 rounded-xl bg-[#101322] border border-white/10 text-sm text-[#F5F5FA] focus:outline-none focus:ring-2 focus:ring-[#6C63FF]"
+                  className="w-full px-4 py-2.5 rounded-xl bg-[#101322] border border-white/10 text-sm text-[#F5F5FA] focus:outline-none focus:ring-2 focus:ring-[#7C3AED]"
                 />
               </div>
 
@@ -168,7 +168,7 @@ export function ProfileEditor({ initialSettings }: ProfileEditorProps) {
                   required
                   value={formData.professionalTitle}
                   onChange={(e) => setFormData({ ...formData, professionalTitle: e.target.value })}
-                  className="w-full px-4 py-2.5 rounded-xl bg-[#101322] border border-white/10 text-sm text-[#F5F5FA] focus:outline-none focus:ring-2 focus:ring-[#6C63FF]"
+                  className="w-full px-4 py-2.5 rounded-xl bg-[#101322] border border-white/10 text-sm text-[#F5F5FA] focus:outline-none focus:ring-2 focus:ring-[#7C3AED]"
                 />
               </div>
             </div>
@@ -182,7 +182,7 @@ export function ProfileEditor({ initialSettings }: ProfileEditorProps) {
                 rows={5}
                 value={formData.biography}
                 onChange={(e) => setFormData({ ...formData, biography: e.target.value })}
-                className="w-full px-4 py-3 rounded-xl bg-[#101322] border border-white/10 text-sm text-[#F5F5FA] focus:outline-none focus:ring-2 focus:ring-[#6C63FF]"
+                className="w-full px-4 py-3 rounded-xl bg-[#101322] border border-white/10 text-sm text-[#F5F5FA] focus:outline-none focus:ring-2 focus:ring-[#7C3AED]"
               />
             </div>
           </div>
@@ -193,7 +193,7 @@ export function ProfileEditor({ initialSettings }: ProfileEditorProps) {
             <div className="space-y-3">
               <div className="space-y-1.5">
                 <label className="text-xs font-semibold text-[#F5F5FA] flex items-center gap-1.5">
-                  <Mail className="w-3.5 h-3.5 text-[#6C63FF]" />
+                  <Mail className="w-3.5 h-3.5 text-[#7C3AED]" />
                   <span>Public Contact Email *</span>
                 </label>
                 <input
@@ -201,7 +201,7 @@ export function ProfileEditor({ initialSettings }: ProfileEditorProps) {
                   required
                   value={formData.email}
                   onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                  className="w-full px-4 py-2.5 rounded-xl bg-[#101322] border border-white/10 text-sm text-[#F5F5FA] focus:outline-none focus:ring-2 focus:ring-[#6C63FF]"
+                  className="w-full px-4 py-2.5 rounded-xl bg-[#101322] border border-white/10 text-sm text-[#F5F5FA] focus:outline-none focus:ring-2 focus:ring-[#7C3AED]"
                 />
               </div>
 
@@ -215,7 +215,7 @@ export function ProfileEditor({ initialSettings }: ProfileEditorProps) {
                   required
                   value={formData.githubUrl}
                   onChange={(e) => setFormData({ ...formData, githubUrl: e.target.value })}
-                  className="w-full px-4 py-2.5 rounded-xl bg-[#101322] border border-white/10 text-sm text-[#F5F5FA] focus:outline-none focus:ring-2 focus:ring-[#6C63FF]"
+                  className="w-full px-4 py-2.5 rounded-xl bg-[#101322] border border-white/10 text-sm text-[#F5F5FA] focus:outline-none focus:ring-2 focus:ring-[#7C3AED]"
                 />
               </div>
 
@@ -229,7 +229,7 @@ export function ProfileEditor({ initialSettings }: ProfileEditorProps) {
                   required
                   value={formData.linkedinUrl}
                   onChange={(e) => setFormData({ ...formData, linkedinUrl: e.target.value })}
-                  className="w-full px-4 py-2.5 rounded-xl bg-[#101322] border border-white/10 text-sm text-[#F5F5FA] focus:outline-none focus:ring-2 focus:ring-[#6C63FF]"
+                  className="w-full px-4 py-2.5 rounded-xl bg-[#101322] border border-white/10 text-sm text-[#F5F5FA] focus:outline-none focus:ring-2 focus:ring-[#7C3AED]"
                 />
               </div>
             </div>

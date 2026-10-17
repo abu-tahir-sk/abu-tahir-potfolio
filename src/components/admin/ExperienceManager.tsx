@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { createExperience, updateExperience, deleteExperience } from "@/actions/experience";
 import { Plus, Edit, Trash2, Briefcase, Loader2, AlertCircle } from "lucide-react";
+import { TechBadge } from "@/components/ui/TechBadge";
 
 interface ExperienceItem {
   id: string;
@@ -161,14 +162,9 @@ export function ExperienceManager({ initialExperiences }: ExperienceManagerProps
                   {exp.description}
                 </p>
                 {exp.technologies && exp.technologies.length > 0 && (
-                  <div className="flex flex-wrap gap-1 pt-1">
+                  <div className="flex flex-wrap gap-1.5 pt-1.5">
                     {exp.technologies.map((t) => (
-                      <span
-                        key={t}
-                        className="px-2 py-0.5 rounded text-[10px] font-mono bg-white/5 border border-white/10 text-[#F5F5FA]"
-                      >
-                        {t}
-                      </span>
+                      <TechBadge key={t} name={t} size="xs" />
                     ))}
                   </div>
                 )}
@@ -177,7 +173,7 @@ export function ExperienceManager({ initialExperiences }: ExperienceManagerProps
               <div className="flex items-center gap-2 self-start shrink-0">
                 <button
                   onClick={() => openEditModal(exp)}
-                  className="p-2 rounded-lg bg-[#6C63FF]/10 text-[#6C63FF] hover:bg-[#6C63FF]/20"
+                  className="p-2 rounded-lg bg-[#7C3AED]/10 text-[#7C3AED] hover:bg-[#7C3AED]/20"
                 >
                   <Edit className="w-3.5 h-3.5" />
                 </button>
@@ -211,7 +207,7 @@ export function ExperienceManager({ initialExperiences }: ExperienceManagerProps
                     placeholder="e.g. Full-Stack Developer"
                     value={role}
                     onChange={(e) => setRole(e.target.value)}
-                    className="w-full px-3 py-2 rounded-xl bg-[#101322] border border-white/10 text-xs text-[#F5F5FA] focus:outline-none focus:ring-2 focus:ring-[#6C63FF]"
+                    className="w-full px-3 py-2 rounded-xl bg-[#101322] border border-white/10 text-xs text-[#F5F5FA] focus:outline-none focus:ring-2 focus:ring-[#7C3AED]"
                   />
                 </div>
 
@@ -223,7 +219,7 @@ export function ExperienceManager({ initialExperiences }: ExperienceManagerProps
                     placeholder="e.g. Freelance / Client Project"
                     value={organization}
                     onChange={(e) => setOrganization(e.target.value)}
-                    className="w-full px-3 py-2 rounded-xl bg-[#101322] border border-white/10 text-xs text-[#F5F5FA] focus:outline-none focus:ring-2 focus:ring-[#6C63FF]"
+                    className="w-full px-3 py-2 rounded-xl bg-[#101322] border border-white/10 text-xs text-[#F5F5FA] focus:outline-none focus:ring-2 focus:ring-[#7C3AED]"
                   />
                 </div>
               </div>
@@ -237,7 +233,7 @@ export function ExperienceManager({ initialExperiences }: ExperienceManagerProps
                     placeholder="e.g. 2024 or Jan 2024"
                     value={startDate}
                     onChange={(e) => setStartDate(e.target.value)}
-                    className="w-full px-3 py-2 rounded-xl bg-[#101322] border border-white/10 text-xs text-[#F5F5FA] focus:outline-none focus:ring-2 focus:ring-[#6C63FF]"
+                    className="w-full px-3 py-2 rounded-xl bg-[#101322] border border-white/10 text-xs text-[#F5F5FA] focus:outline-none focus:ring-2 focus:ring-[#7C3AED]"
                   />
                 </div>
 
@@ -249,7 +245,7 @@ export function ExperienceManager({ initialExperiences }: ExperienceManagerProps
                     placeholder={current ? "Present" : "e.g. Dec 2024"}
                     value={current ? "" : endDate}
                     onChange={(e) => setEndDate(e.target.value)}
-                    className="w-full px-3 py-2 rounded-xl bg-[#101322] border border-white/10 text-xs text-[#F5F5FA] focus:outline-none focus:ring-2 focus:ring-[#6C63FF] disabled:opacity-40"
+                    className="w-full px-3 py-2 rounded-xl bg-[#101322] border border-white/10 text-xs text-[#F5F5FA] focus:outline-none focus:ring-2 focus:ring-[#7C3AED] disabled:opacity-40"
                   />
                 </div>
               </div>
@@ -260,7 +256,7 @@ export function ExperienceManager({ initialExperiences }: ExperienceManagerProps
                   id="exp-current"
                   checked={current}
                   onChange={(e) => setCurrent(e.target.checked)}
-                  className="w-4 h-4 accent-[#6C63FF] rounded cursor-pointer"
+                  className="w-4 h-4 accent-[#7C3AED] rounded cursor-pointer"
                 />
                 <label htmlFor="exp-current" className="text-xs text-[#F5F5FA] cursor-pointer">
                   Currently active in this role
@@ -274,8 +270,19 @@ export function ExperienceManager({ initialExperiences }: ExperienceManagerProps
                   placeholder="React, Next.js, TypeScript, PostgreSQL"
                   value={techString}
                   onChange={(e) => setTechString(e.target.value)}
-                  className="w-full px-3 py-2 rounded-xl bg-[#101322] border border-white/10 text-xs text-[#F5F5FA] focus:outline-none focus:ring-2 focus:ring-[#6C63FF]"
+                  className="w-full px-3 py-2 rounded-xl bg-[#101322] border border-white/10 text-xs text-[#F5F5FA] focus:outline-none focus:ring-2 focus:ring-[#7C3AED]"
                 />
+                {techString.trim() && (
+                  <div className="flex flex-wrap gap-1 pt-1">
+                    {techString
+                      .split(",")
+                      .map((s) => s.trim())
+                      .filter(Boolean)
+                      .map((t) => (
+                        <TechBadge key={t} name={t} size="xs" />
+                      ))}
+                  </div>
+                )}
               </div>
 
               <div className="space-y-1.5">
@@ -286,7 +293,7 @@ export function ExperienceManager({ initialExperiences }: ExperienceManagerProps
                   placeholder="Summary of responsibilities, achievements, and technologies..."
                   value={description}
                   onChange={(e) => setDescription(e.target.value)}
-                  className="w-full px-3 py-2 rounded-xl bg-[#101322] border border-white/10 text-xs text-[#F5F5FA] focus:outline-none focus:ring-2 focus:ring-[#6C63FF]"
+                  className="w-full px-3 py-2 rounded-xl bg-[#101322] border border-white/10 text-xs text-[#F5F5FA] focus:outline-none focus:ring-2 focus:ring-[#7C3AED]"
                 />
               </div>
 

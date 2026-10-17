@@ -41,7 +41,7 @@ export function FloatingCards() {
               Building with
             </span>
             <span className="text-[11px] sm:text-xs font-semibold text-[#F8FAFC] tracking-tight group-hover:text-white transition-colors whitespace-nowrap">
-              React · Next.js · TypeScript
+              Full Web Applications
             </span>
           </div>
         </div>

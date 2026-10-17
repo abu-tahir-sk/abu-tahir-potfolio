@@ -9,7 +9,7 @@ export function HeroBackground() {
       className="absolute inset-0 overflow-hidden pointer-events-none select-none z-0"
     >
       {/* 1. Deep Cosmic Dark Navy Base */}
-      <div className="absolute inset-0 bg-[#060814]" />
+      <div className="absolute inset-0 bg-[#060814] hero-bg-base" />
 
       {/* 2. Left Celestial Atmosphere & 3D Purple Planet */}
       <div className="absolute top-[10%] sm:top-[12%] lg:top-[14%] left-[1.5%] sm:left-[2.5%] lg:left-[3.5%] flex items-center justify-center">
@@ -126,7 +126,7 @@ export function HeroBackground() {
       </div>
 
       {/* 7. Bottom seamless transition into subsequent sections */}
-      <div className="absolute bottom-0 left-0 right-0 h-28 bg-gradient-to-b from-transparent via-[#060814]/70 to-[#0B0B14] pointer-events-none" />
+      <div className="absolute bottom-0 left-0 right-0 h-28 bg-gradient-to-b from-transparent via-[#060814]/70 to-[#0B0B14] hero-bottom-fade pointer-events-none" />
     </div>
   );
 }

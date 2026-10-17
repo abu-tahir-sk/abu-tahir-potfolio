@@ -126,7 +126,7 @@ function LoginForm() {
       <button
         type="submit"
         disabled={loading}
-        className="group w-full py-3.5 rounded-xl font-semibold text-sm text-white flex items-center justify-center gap-2 bg-gradient-to-r from-[#9333EA] via-[#6366F1] to-[#3B82F6] hover:from-[#A855F7] hover:via-[#4F46E5] hover:to-[#60A5FA] shadow-[0_4px_25px_-3px_rgba(99,102,241,0.55)] hover:shadow-[0_6px_30px_rgba(99,102,241,0.7)] hover:-translate-y-0.5 active:translate-y-0 disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-[#8B5CF6] focus:ring-offset-2 focus:ring-offset-[#070914] mt-3"
+        className="group w-full py-3.5 rounded-xl font-semibold text-sm text-white flex items-center justify-center gap-2 bg-gradient-to-r from-[#7C3AED] via-[#6D28D9] to-[#4F46E5] hover:from-[#8B5CF6] hover:to-[#6366F1] shadow-lg shadow-[#7C3AED]/25 hover:shadow-xl hover:shadow-[#7C3AED]/40 hover:-translate-y-0.5 active:translate-y-0 disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-[#8B5CF6] focus:ring-offset-2 focus:ring-offset-[#070914] mt-3"
       >
         {loading ? (
           <>

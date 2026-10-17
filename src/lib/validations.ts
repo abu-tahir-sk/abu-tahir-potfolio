@@ -48,12 +48,16 @@ export const experienceSchema = z.object({
 });
 
 export const educationSchema = z.object({
-  qualification: z.string().min(2, "Qualification is required").max(100),
-  institution: z.string().min(2, "Institution is required").max(100),
-  description: z.string().min(10, "Description is required"),
-  startDate: z.string().min(1, "Start date is required"),
-  endDate: z.string().optional().nullable(),
+  qualification: z.string().min(2, "Qualification is required").max(120),
+  institution: z.string().min(2, "Institution is required").max(150),
+  subject: z.string().max(120).optional().nullable(),
+  boardOrUniversity: z.string().max(150).optional().nullable(),
+  passingYear: z.string().max(20).optional().nullable(),
+  description: z.string().max(1000).optional().nullable(),
+  startDate: z.string().max(20).optional().nullable(),
+  endDate: z.string().max(20).optional().nullable(),
   displayOrder: z.coerce.number().int().default(0),
+  visible: z.boolean().default(true),
 });
 
 export const contactMessageSchema = z.object({

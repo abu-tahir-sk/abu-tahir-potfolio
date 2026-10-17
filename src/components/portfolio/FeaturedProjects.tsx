@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowUpRight, ExternalLink, Sparkles, FolderGit2 } from "lucide-react";
 import { Github } from "@/components/ui/Icons";
+import { TechBadge } from "@/components/ui/TechBadge";
 
 interface ProjectItem {
   id: string;
@@ -27,7 +28,7 @@ export function FeaturedProjects({ projects }: FeaturedProjectsProps) {
     return (
       <section id="projects" className="py-20 border-t border-white/10 relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4">
-          <FolderGit2 className="w-12 h-12 text-[#6C63FF] mx-auto opacity-60" />
+          <FolderGit2 className="w-12 h-12 text-[#7C3AED] mx-auto opacity-60" />
           <h2 className="text-2xl font-bold text-[#F5F5FA]">Projects Coming Soon</h2>
           <p className="text-sm text-[#A0A3B8] max-w-md mx-auto">
             New software applications and case studies are being published. Check back shortly.
@@ -43,14 +44,14 @@ export function FeaturedProjects({ projects }: FeaturedProjectsProps) {
   return (
     <section id="projects" className="py-24 border-t border-white/10 relative overflow-hidden">
       {/* Background illumination */}
-      <div className="absolute top-1/2 left-0 w-[500px] h-[500px] bg-[#6C63FF]/5 blur-[120px] pointer-events-none" />
+      <div className="absolute top-1/2 left-0 w-[500px] h-[500px] bg-[#7C3AED]/5 blur-[120px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
           <div>
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#15182A] border border-[#6C63FF]/30 text-xs font-mono text-[#38BDF8] mb-3">
-              <Sparkles className="w-3.5 h-3.5 text-[#6C63FF]" />
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#15182A] border border-[#7C3AED]/30 text-xs font-mono text-[#38BDF8] mb-3">
+              <Sparkles className="w-3.5 h-3.5 text-[#7C3AED]" />
               <span>SHOWCASE</span>
             </div>
             <h2 className="text-3xl sm:text-4xl font-extrabold text-[#F5F5FA] tracking-tight">
@@ -72,7 +73,7 @@ export function FeaturedProjects({ projects }: FeaturedProjectsProps) {
 
         {/* Primary Hero Feature Card (DocuFlow or highest priority featured project) */}
         {featuredProject && (
-          <div className="card-surface rounded-2xl overflow-hidden border border-white/10 mb-12 group hover:border-[#6C63FF]/40 transition-all duration-300">
+          <div className="card-surface rounded-2xl overflow-hidden border border-white/10 mb-12 group hover:border-[#7C3AED]/40 transition-all duration-300">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-0">
               {/* Image Preview Container */}
               <div className="lg:col-span-7 relative min-h-[300px] sm:min-h-[380px] bg-[#101322] overflow-hidden">
@@ -85,7 +86,7 @@ export function FeaturedProjects({ projects }: FeaturedProjectsProps) {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#15182A] via-transparent to-transparent opacity-80 lg:hidden" />
                 <div className="absolute top-4 left-4 flex items-center gap-2">
-                  <span className="px-3 py-1 rounded-full bg-[#6C63FF] text-white text-xs font-semibold shadow-md shadow-[#6C63FF]/30 flex items-center gap-1">
+                  <span className="px-3 py-1 rounded-full bg-gradient-to-r from-[#7C3AED] via-[#6D28D9] to-[#4F46E5] text-white text-xs font-semibold shadow-md shadow-[#7C3AED]/30 flex items-center gap-1">
                     <Sparkles className="w-3 h-3" />
                     <span>Featured Project</span>
                   </span>
@@ -120,7 +121,7 @@ export function FeaturedProjects({ projects }: FeaturedProjectsProps) {
                       <ul className="grid grid-cols-1 sm:grid-cols-2 gap-1.5 text-xs text-[#A0A3B8]">
                         {featuredProject.features.slice(0, 6).map((feat, i) => (
                           <li key={i} className="flex items-center gap-2">
-                            <span className="w-1.5 h-1.5 rounded-full bg-[#6C63FF]" />
+                            <span className="w-1.5 h-1.5 rounded-full bg-[#7C3AED]" />
                             <span className="truncate">{feat}</span>
                           </li>
                         ))}
@@ -132,12 +133,7 @@ export function FeaturedProjects({ projects }: FeaturedProjectsProps) {
                   <div className="pt-3">
                     <div className="flex flex-wrap gap-2">
                       {featuredProject.technologies.map((tech) => (
-                        <span
-                          key={tech}
-                          className="px-2.5 py-1 rounded-md text-xs font-mono bg-white/5 border border-white/10 text-[#F5F5FA]"
-                        >
-                          {tech}
-                        </span>
+                        <TechBadge key={tech} name={tech} size="sm" />
                       ))}
                     </div>
                   </div>
@@ -188,7 +184,7 @@ export function FeaturedProjects({ projects }: FeaturedProjectsProps) {
             {otherProjects.map((project) => (
               <div
                 key={project.id}
-                className="card-surface rounded-xl overflow-hidden border border-white/10 flex flex-col group hover:border-[#6C63FF]/40 transition-all duration-300"
+                className="card-surface rounded-xl overflow-hidden border border-white/10 flex flex-col group hover:border-[#7C3AED]/40 transition-all duration-300"
               >
                 {/* Cover Image */}
                 <div className="relative h-48 bg-[#101322] overflow-hidden">
@@ -220,15 +216,10 @@ export function FeaturedProjects({ projects }: FeaturedProjectsProps) {
                   {/* Tech stack */}
                   <div className="flex flex-wrap gap-1.5 pt-1">
                     {project.technologies.slice(0, 4).map((tech) => (
-                      <span
-                        key={tech}
-                        className="px-2 py-0.5 rounded text-[10px] font-mono bg-white/5 border border-white/10 text-[#A0A3B8]"
-                      >
-                        {tech}
-                      </span>
+                      <TechBadge key={tech} name={tech} size="xs" />
                     ))}
                     {project.technologies.length > 4 && (
-                      <span className="text-[10px] font-mono text-[#A0A3B8] self-center">
+                      <span className="text-[10px] font-mono text-[#A0A3B8] self-center px-1">
                         +{project.technologies.length - 4}
                       </span>
                     )}
@@ -238,7 +229,7 @@ export function FeaturedProjects({ projects }: FeaturedProjectsProps) {
                   <div className="pt-3 border-t border-white/10 flex items-center justify-between">
                     <Link
                       href={`/projects/${project.slug}`}
-                      className="text-xs font-semibold text-[#6C63FF] hover:text-[#38BDF8] flex items-center gap-1 transition-colors"
+                      className="text-xs font-semibold text-[#7C3AED] hover:text-[#A78BFA] flex items-center gap-1 transition-colors"
                     >
                       <span>Explore</span>
                       <ArrowUpRight className="w-3.5 h-3.5" />

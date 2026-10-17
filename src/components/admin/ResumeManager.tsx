@@ -84,8 +84,8 @@ export function ResumeManager({ currentResumeUrl }: ResumeManagerProps) {
         </div>
 
         {/* Upload Zone */}
-        <div className="p-8 rounded-2xl border-2 border-dashed border-white/10 hover:border-[#6C63FF]/50 bg-[#101322] text-center space-y-4 transition-colors">
-          <div className="w-12 h-12 rounded-xl bg-[#6C63FF]/10 text-[#6C63FF] mx-auto flex items-center justify-center">
+        <div className="p-8 rounded-2xl border-2 border-dashed border-white/10 hover:border-[#7C3AED]/50 bg-[#101322] text-center space-y-4 transition-colors">
+          <div className="w-12 h-12 rounded-xl bg-[#7C3AED]/10 text-[#7C3AED] mx-auto flex items-center justify-center">
             {uploading ? (
               <Loader2 className="w-6 h-6 animate-spin" />
             ) : (
@@ -127,7 +127,7 @@ export function ResumeManager({ currentResumeUrl }: ResumeManagerProps) {
               placeholder="/resume/Abu-Tahir-Sk-Resume.pdf or https://..."
               value={resumeUrl}
               onChange={(e) => setResumeUrl(e.target.value)}
-              className="flex-1 px-4 py-2.5 rounded-xl bg-[#101322] border border-white/10 text-xs font-mono text-[#38BDF8] focus:outline-none focus:ring-2 focus:ring-[#6C63FF]"
+              className="flex-1 px-4 py-2.5 rounded-xl bg-[#101322] border border-white/10 text-xs font-mono text-[#38BDF8] focus:outline-none focus:ring-2 focus:ring-[#7C3AED]"
             />
             <button
               type="submit"

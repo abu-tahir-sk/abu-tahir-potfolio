@@ -59,7 +59,7 @@ export function HeroSection({
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#C084FC] opacity-75" />
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-[#C084FC]" />
               </span>
-              <span>HELLO, I&apos;M ABU TAHIR SK</span>
+              <span>HI, I&apos;M ABU TAHIR SK</span>
             </div>
 
             {/* Main Heading */}

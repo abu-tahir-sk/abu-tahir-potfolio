@@ -18,7 +18,7 @@ export default async function ContactPage() {
   });
 
   return (
-    <div className="min-h-screen flex flex-col bg-[#0B0B14] text-[#F5F5FA]">
+    <div className="min-h-screen flex flex-col bg-[var(--bg-main)] text-[var(--text-main)] transition-colors duration-200">
       <Navbar />
 
       <main className="flex-1 pt-12">

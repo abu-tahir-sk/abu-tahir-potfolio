@@ -74,9 +74,9 @@ export default async function AdminDashboardPage() {
       label: "Featured Projects",
       value: featuredProjects,
       icon: Sparkles,
-      color: "text-[#6C63FF]",
-      bg: "bg-[#6C63FF]/10",
-      border: "border-[#6C63FF]/20",
+      color: "text-[#7C3AED]",
+      bg: "bg-[#7C3AED]/10",
+      border: "border-[#7C3AED]/20",
     },
     {
       label: "Total Inquiries",
@@ -112,7 +112,7 @@ export default async function AdminDashboardPage() {
         <div className="flex items-center gap-2.5">
           <Link
             href="/admin/projects/new"
-            className="button-primary text-xs px-4 py-2.5 rounded-xl flex items-center gap-1.5 font-medium shadow-md shadow-[#6C63FF]/20"
+            className="button-primary text-xs px-4 py-2.5 rounded-xl flex items-center gap-1.5 font-medium shadow-md shadow-[#7C3AED]/25"
           >
             <Plus className="w-4 h-4" />
             <span>New Project</span>
@@ -249,7 +249,7 @@ export default async function AdminDashboardPage() {
                   href="/admin/messages"
                   className={`block p-3.5 rounded-xl border transition-all ${
                     !msg.isRead
-                      ? "bg-[#15182A] border-[#6C63FF]/30 shadow-sm shadow-[#6C63FF]/10"
+                      ? "bg-[#15182A] border-[#7C3AED]/30 shadow-sm shadow-[#7C3AED]/10"
                       : "bg-[#101322] border-white/5 opacity-80 hover:opacity-100"
                   }`}
                 >
@@ -277,9 +277,9 @@ export default async function AdminDashboardPage() {
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
         <Link
           href="/admin/skills"
-          className="card-surface p-5 rounded-xl border border-white/10 group hover:border-[#6C63FF]/40 transition-colors flex items-center gap-3.5"
+          className="card-surface p-5 rounded-xl border border-white/10 group hover:border-[#7C3AED]/40 transition-colors flex items-center gap-3.5"
         >
-          <div className="w-10 h-10 rounded-lg bg-[#6C63FF]/10 text-[#6C63FF] flex items-center justify-center group-hover:scale-105 transition-transform">
+          <div className="w-10 h-10 rounded-lg bg-[#7C3AED]/10 text-[#7C3AED] flex items-center justify-center group-hover:scale-105 transition-transform">
             <Code2 className="w-5 h-5" />
           </div>
           <div>

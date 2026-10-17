@@ -46,7 +46,7 @@ export function OrbitRings() {
 
         {/* Inner Ring: Subtle Accent Ring */}
         <div className="absolute inset-[24%] rounded-full border border-purple-400/15">
-          <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-[#6C63FF]/5 via-transparent to-[#38BDF8]/5" />
+          <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-[#7C3AED]/5 via-transparent to-[#38BDF8]/5" />
         </div>
 
         {/* Center ambient glow beacon */}

@@ -6,6 +6,7 @@ import { FeaturedProjects } from "@/components/portfolio/FeaturedProjects";
 import { SkillsSection } from "@/components/portfolio/SkillsSection";
 import { AboutSection } from "@/components/portfolio/AboutSection";
 import { TimelineSection } from "@/components/portfolio/TimelineSection";
+import { EducationSection } from "@/components/portfolio/EducationSection";
 import { ContactSection } from "@/components/portfolio/ContactSection";
 
 export const revalidate = 60; // Incremental Static Regeneration every 60s or on-demand revalidation
@@ -28,7 +29,8 @@ export default async function HomePage() {
       orderBy: [{ displayOrder: "asc" }, { startDate: "desc" }],
     }),
     prisma.education.findMany({
-      orderBy: [{ displayOrder: "asc" }, { startDate: "desc" }],
+      where: { visible: true },
+      orderBy: [{ displayOrder: "asc" }, { passingYear: "desc" }, { createdAt: "desc" }],
     }),
   ]);
 
@@ -40,7 +42,7 @@ export default async function HomePage() {
     profileImageUrl: "/images/profile/avatar-default.svg",
     email: "abutahir2626@gmail.com",
     githubUrl: "https://github.com/abu-tahir-sk",
-    linkedinUrl: "https://linkedin.com/in/abu-tahir-sk",
+    linkedinUrl: "https://www.linkedin.com/in/abu-tahir-sk-739036352",
     availabilityStatus: "Available for full-time roles & projects",
     resumeUrl: "/resume/Abu-Tahir-Sk-Resume.pdf",
     footerText: "Designed and built by Abu Tahir Sk.",
@@ -61,7 +63,7 @@ export default async function HomePage() {
   const projectCount = projects.length;
 
   return (
-    <div className="min-h-screen flex flex-col bg-[#0B0B14] text-[#F5F5FA] selection:bg-[#6C63FF]/30 selection:text-white">
+    <div className="min-h-screen flex flex-col bg-[var(--bg-main)] text-[var(--text-main)] selection:bg-[#7C3AED]/30 selection:text-white transition-colors duration-200">
       <Navbar />
 
       <main className="flex-1">
@@ -73,7 +75,8 @@ export default async function HomePage() {
         <SkillsSection skills={skills} />
         <FeaturedProjects projects={projects} />
         <AboutSection settings={siteSettings} />
-        <TimelineSection experiences={experiences} educations={educations} />
+        <TimelineSection experiences={experiences} />
+        <EducationSection educations={educations} />
         <ContactSection settings={siteSettings} />
       </main>
 

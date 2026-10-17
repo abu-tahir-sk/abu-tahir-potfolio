@@ -24,7 +24,7 @@ export function AboutSection({ settings }: AboutSectionProps) {
         "Building pixel-perfect, accessible UI components with modern CSS, Tailwind, and React that scale flawlessly across mobile, tablet, and desktop viewports.",
     },
     {
-      icon: <Database className="w-5 h-5 text-[#6C63FF]" />,
+      icon: <Database className="w-5 h-5 text-[#7C3AED]" />,
       title: "Database-Driven Applications",
       description:
         "Architecting clean relational schemas with PostgreSQL and Prisma ORM, ensuring data integrity, performance, and type-safe data access layers.",
@@ -49,8 +49,8 @@ export function AboutSection({ settings }: AboutSectionProps) {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
           {/* Left Column: Biography & Approach */}
           <div className="lg:col-span-5 space-y-6">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#15182A] border border-[#6C63FF]/30 text-xs font-mono text-[#38BDF8]">
-              <Zap className="w-3.5 h-3.5 text-[#6C63FF]" />
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#15182A] border border-[#7C3AED]/30 text-xs font-mono text-[#38BDF8]">
+              <Zap className="w-3.5 h-3.5 text-[#7C3AED]" />
               <span>ABOUT ME</span>
             </div>
 
@@ -81,9 +81,9 @@ export function AboutSection({ settings }: AboutSectionProps) {
             {principles.map((p, idx) => (
               <div
                 key={idx}
-                className="card-surface p-6 rounded-2xl border border-white/10 space-y-3 group hover:border-[#6C63FF]/40 transition-all duration-300"
+                className="card-surface p-6 rounded-2xl border border-white/10 space-y-3 group hover:border-[#7C3AED]/40 transition-all duration-300"
               >
-                <div className="w-10 h-10 rounded-xl bg-[#101322] border border-white/10 flex items-center justify-center group-hover:border-[#6C63FF]/50 transition-colors">
+                <div className="w-10 h-10 rounded-xl bg-[#101322] border border-white/10 flex items-center justify-center group-hover:border-[#7C3AED]/50 transition-colors">
                   {p.icon}
                 </div>
                 <h3 className="text-base font-bold text-[#F5F5FA] group-hover:text-white transition-colors">

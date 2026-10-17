@@ -96,7 +96,7 @@ export function ProjectsTable({ initialProjects }: ProjectsTableProps) {
             placeholder="Search projects..."
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
-            className="w-full pl-10 pr-4 py-2 rounded-xl bg-[#101322] border border-white/10 text-xs text-[#F5F5FA] placeholder-[#A0A3B8]/60 focus:outline-none focus:ring-2 focus:ring-[#6C63FF]"
+            className="w-full pl-10 pr-4 py-2 rounded-xl bg-[#101322] border border-white/10 text-xs text-[#F5F5FA] placeholder-[#A0A3B8]/60 focus:outline-none focus:ring-2 focus:ring-[#7C3AED]"
           />
         </div>
 
@@ -104,7 +104,7 @@ export function ProjectsTable({ initialProjects }: ProjectsTableProps) {
           <select
             value={statusFilter}
             onChange={(e) => setStatusFilter(e.target.value)}
-            className="px-3 py-2 rounded-xl bg-[#101322] border border-white/10 text-xs text-[#F5F5FA] focus:outline-none focus:ring-2 focus:ring-[#6C63FF]"
+            className="px-3 py-2 rounded-xl bg-[#101322] border border-white/10 text-xs text-[#F5F5FA] focus:outline-none focus:ring-2 focus:ring-[#7C3AED]"
           >
             <option value="ALL">All Status</option>
             <option value="PUBLISHED">Published</option>
@@ -113,7 +113,7 @@ export function ProjectsTable({ initialProjects }: ProjectsTableProps) {
 
           <Link
             href="/admin/projects/new"
-            className="button-primary text-xs px-4 py-2 rounded-xl flex items-center gap-1.5 font-medium shadow-sm shadow-[#6C63FF]/30 shrink-0"
+            className="button-primary text-xs px-4 py-2 rounded-xl flex items-center gap-1.5 font-medium shadow-sm shadow-[#7C3AED]/25 shrink-0"
           >
             <Plus className="w-4 h-4" />
             <span>New Project</span>
@@ -199,7 +199,7 @@ export function ProjectsTable({ initialProjects }: ProjectsTableProps) {
                         type="button"
                         className={`inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[10px] font-semibold transition-all ${
                           project.featured
-                            ? "bg-[#6C63FF]/20 text-[#6C63FF] border border-[#6C63FF]/40"
+                            ? "bg-gradient-to-r from-[#7C3AED] via-[#6D28D9] to-[#4F46E5] text-white shadow-sm shadow-[#7C3AED]/25"
                             : "bg-white/5 text-[#A0A3B8] border border-white/10 hover:text-white"
                         }`}
                       >
@@ -241,7 +241,7 @@ export function ProjectsTable({ initialProjects }: ProjectsTableProps) {
                         <Link
                           href={`/admin/projects/${project.id}/edit`}
                           title="Edit Project"
-                          className="p-1.5 rounded-lg bg-[#6C63FF]/10 hover:bg-[#6C63FF]/20 text-[#6C63FF]"
+                          className="p-1.5 rounded-lg bg-[#7C3AED]/10 hover:bg-[#7C3AED]/20 text-[#7C3AED]"
                         >
                           <Edit className="w-3.5 h-3.5" />
                         </Link>

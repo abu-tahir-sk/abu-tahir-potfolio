@@ -80,16 +80,21 @@ model Experience {
 }
 
 model Education {
-  id            String   @id @default(cuid())
-  qualification String
-  institution   String
-  description   String   @db.Text
-  startDate     String
-  endDate       String?
-  displayOrder  Int      @default(0)
-  createdAt     DateTime @default(now())
-  updatedAt     DateTime @updatedAt
+  id                String   @id @default(cuid())
+  qualification     String
+  institution       String
+  subject           String?
+  boardOrUniversity String?
+  passingYear       String?
+  description       String?  @db.Text
+  startDate         String?
+  endDate           String?
+  displayOrder      Int      @default(0)
+  visible           Boolean  @default(true)
+  createdAt         DateTime @default(now())
+  updatedAt         DateTime @updatedAt
 
+  @@index([visible, displayOrder])
   @@map("educations")
 }
 
@@ -116,7 +121,7 @@ model SiteSettings {
   avatarUrl           String?
   email               String   @default("abutahir2626@gmail.com")
   githubUrl           String   @default("https://github.com/abu-tahir-sk")
-  linkedinUrl         String   @default("https://linkedin.com/in/abu-tahir-sk")
+  linkedinUrl         String   @default("https://www.linkedin.com/in/abu-tahir-sk-739036352")
   availabilityStatus  String   @default("Available for hire & full-time roles")
   resumeUrl           String?
   siteUrl             String   @default("https://abutahir.dev")

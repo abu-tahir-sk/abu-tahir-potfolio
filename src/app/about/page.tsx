@@ -24,7 +24,8 @@ export default async function AboutPage() {
       orderBy: [{ displayOrder: "asc" }, { startDate: "desc" }],
     }),
     prisma.education.findMany({
-      orderBy: [{ displayOrder: "asc" }, { startDate: "desc" }],
+      where: { visible: true },
+      orderBy: [{ displayOrder: "asc" }, { passingYear: "desc" }, { createdAt: "desc" }],
     }),
   ]);
 
@@ -37,15 +38,15 @@ export default async function AboutPage() {
   const resumeUrl = settings?.resumeUrl || "/resume/Abu-Tahir-Sk-Resume.pdf";
 
   return (
-    <div className="min-h-screen flex flex-col bg-[#0B0B14] text-[#F5F5FA]">
+    <div className="min-h-screen flex flex-col bg-[var(--bg-main)] text-[var(--text-main)] transition-colors duration-200">
       <Navbar />
 
       <main className="flex-1 pt-32 pb-24">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Header */}
           <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#15182A] border border-[#6C63FF]/30 text-xs font-mono text-[#38BDF8]">
-              <Sparkles className="w-3.5 h-3.5 text-[#6C63FF]" />
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#15182A] border border-[#7C3AED]/30 text-xs font-mono text-[#38BDF8]">
+              <Sparkles className="w-3.5 h-3.5 text-[#7C3AED]" />
               <span>DEVELOPMENT JOURNEY</span>
             </div>
             <h1 className="text-4xl sm:text-5xl font-extrabold text-[#F5F5FA] tracking-tight">
@@ -59,7 +60,7 @@ export default async function AboutPage() {
           {/* Profile Overview Card */}
           <div className="card-surface p-8 sm:p-12 rounded-3xl border border-white/10 mb-16 grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
             <div className="md:col-span-4 flex justify-center">
-              <div className="relative w-48 sm:w-56 aspect-square rounded-2xl overflow-hidden p-[2px] bg-gradient-to-tr from-[#6C63FF] to-[#38BDF8]">
+              <div className="relative w-48 sm:w-56 aspect-square rounded-2xl overflow-hidden p-[2px] bg-gradient-to-tr from-[#7C3AED] to-[#38BDF8]">
                 <div className="w-full h-full rounded-[14px] bg-[#101322] overflow-hidden flex items-center justify-center">
                   <Image
                     src={profileImage}
@@ -78,7 +79,7 @@ export default async function AboutPage() {
                   Developer Profile
                 </span>
                 <h2 className="text-2xl sm:text-3xl font-bold text-[#F5F5FA]">{name}</h2>
-                <p className="text-sm font-semibold text-[#6C63FF]">{title}</p>
+                <p className="text-sm font-semibold text-[#7C3AED]">{title}</p>
               </div>
 
               <div className="text-sm text-[#A0A3B8] leading-relaxed space-y-3">
@@ -121,7 +122,7 @@ export default async function AboutPage() {
             </div>
 
             <div className="card-surface p-6 rounded-2xl border border-white/10 space-y-3">
-              <Database className="w-6 h-6 text-[#6C63FF]" />
+              <Database className="w-6 h-6 text-[#7C3AED]" />
               <h3 className="text-base font-bold text-[#F5F5FA]">Backend &amp; Databases</h3>
               <p className="text-xs text-[#A0A3B8] leading-relaxed">
                 Designing relational schemas and server-side logic using PostgreSQL, Prisma, Server Actions, and Node.js.

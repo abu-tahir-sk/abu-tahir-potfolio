@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname, useRouter } from "next/navigation";
 import {
   LayoutDashboard,
@@ -58,14 +59,20 @@ export function AdminSidebar({ onClose, unreadCount = 0 }: AdminSidebarProps) {
       <div className="space-y-6">
         {/* Brand */}
         <div className="flex items-center justify-between px-2 pt-2">
-          <Link href="/admin" className="flex items-center gap-3">
-            <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-[#6C63FF] to-[#38BDF8] p-[1.5px]">
-              <div className="w-full h-full bg-[#15182A] rounded-[10px] flex items-center justify-center font-mono font-bold text-xs text-[#F5F5FA]">
-                &#123;AT&#125;
+          <Link href="/admin" className="flex items-center gap-3 group">
+            <div className="relative w-9 h-9 rounded-xl bg-gradient-to-br from-[#8B5CF6]/40 via-[#7C3AED]/30 to-[#38BDF8]/40 p-[1.5px] shadow-md shadow-[#8B5CF6]/20 group-hover:shadow-[#8B5CF6]/40 group-hover:scale-105 transition-all">
+              <div className="w-full h-full bg-[#15182A] rounded-[10px] flex items-center justify-center p-1 overflow-hidden">
+                <Image
+                  src="/images/logo.png"
+                  alt="Admin Logo"
+                  width={30}
+                  height={30}
+                  className="w-full h-full object-contain filter drop-shadow-[0_2px_6px_rgba(139,92,246,0.5)] group-hover:scale-110 transition-transform duration-300"
+                />
               </div>
             </div>
             <div>
-              <span className="font-bold text-sm text-[#F5F5FA] block">Portfolio CMS</span>
+              <span className="font-bold text-sm text-[#F5F5FA] block group-hover:text-white transition-colors">Portfolio CMS</span>
               <span className="text-[10px] text-[#38BDF8] font-mono">ADMIN CONSOLE</span>
             </div>
           </Link>
@@ -97,7 +104,7 @@ export function AdminSidebar({ onClose, unreadCount = 0 }: AdminSidebarProps) {
                 onClick={onClose}
                 className={`flex items-center justify-between px-3.5 py-2.5 rounded-xl text-xs font-medium transition-all ${
                   isActive
-                    ? "bg-[#6C63FF] text-white shadow-md shadow-[#6C63FF]/30"
+                    ? "bg-gradient-to-r from-[#7C3AED] via-[#6D28D9] to-[#4F46E5] text-white shadow-md shadow-[#7C3AED]/30"
                     : "text-[#A0A3B8] hover:text-white hover:bg-white/5"
                 }`}
               >

@@ -16,6 +16,7 @@ import {
   ArrowLeft,
 } from "lucide-react";
 import Link from "next/link";
+import { TechBadge } from "@/components/ui/TechBadge";
 
 interface ProjectData {
   id?: string;
@@ -220,7 +221,7 @@ export function ProjectForm({ initialData, isEdit = false }: ProjectFormProps) {
                   placeholder="e.g. DocuFlow"
                   value={formData.title}
                   onChange={(e) => handleTitleChange(e.target.value)}
-                  className="w-full px-4 py-2.5 rounded-xl bg-[#101322] border border-white/10 text-sm text-[#F5F5FA] placeholder-[#A0A3B8]/50 focus:outline-none focus:ring-2 focus:ring-[#6C63FF]"
+                  className="w-full px-4 py-2.5 rounded-xl bg-[#101322] border border-white/10 text-sm text-[#F5F5FA] placeholder-[#A0A3B8]/50 focus:outline-none focus:ring-2 focus:ring-[#7C3AED]"
                 />
               </div>
 
@@ -236,7 +237,7 @@ export function ProjectForm({ initialData, isEdit = false }: ProjectFormProps) {
                     onChange={(e) =>
                       setFormData({ ...formData, slug: slugify(e.target.value) })
                     }
-                    className="w-full px-4 py-2.5 rounded-xl bg-[#101322] border border-white/10 text-sm font-mono text-[#38BDF8] focus:outline-none focus:ring-2 focus:ring-[#6C63FF]"
+                    className="w-full px-4 py-2.5 rounded-xl bg-[#101322] border border-white/10 text-sm font-mono text-[#38BDF8] focus:outline-none focus:ring-2 focus:ring-[#7C3AED]"
                   />
                   <p className="text-[10px] text-[#A0A3B8]">
                     Accessible at: /projects/{formData.slug || "slug"}
@@ -248,7 +249,7 @@ export function ProjectForm({ initialData, isEdit = false }: ProjectFormProps) {
                   <select
                     value={formData.category}
                     onChange={(e) => setFormData({ ...formData, category: e.target.value })}
-                    className="w-full px-4 py-2.5 rounded-xl bg-[#101322] border border-white/10 text-sm text-[#F5F5FA] focus:outline-none focus:ring-2 focus:ring-[#6C63FF]"
+                    className="w-full px-4 py-2.5 rounded-xl bg-[#101322] border border-white/10 text-sm text-[#F5F5FA] focus:outline-none focus:ring-2 focus:ring-[#7C3AED]"
                   >
                     <option value="Full-Stack">Full-Stack</option>
                     <option value="Frontend">Frontend</option>
@@ -273,7 +274,7 @@ export function ProjectForm({ initialData, isEdit = false }: ProjectFormProps) {
                   onChange={(e) =>
                     setFormData({ ...formData, shortDescription: e.target.value })
                   }
-                  className="w-full px-4 py-2.5 rounded-xl bg-[#101322] border border-white/10 text-sm text-[#F5F5FA] placeholder-[#A0A3B8]/50 focus:outline-none focus:ring-2 focus:ring-[#6C63FF]"
+                  className="w-full px-4 py-2.5 rounded-xl bg-[#101322] border border-white/10 text-sm text-[#F5F5FA] placeholder-[#A0A3B8]/50 focus:outline-none focus:ring-2 focus:ring-[#7C3AED]"
                 />
               </div>
 
@@ -288,7 +289,7 @@ export function ProjectForm({ initialData, isEdit = false }: ProjectFormProps) {
                   placeholder="Detailed breakdown of the project, problem solved, architecture..."
                   value={formData.description}
                   onChange={(e) => setFormData({ ...formData, description: e.target.value })}
-                  className="w-full px-4 py-3 rounded-xl bg-[#101322] border border-white/10 text-sm text-[#F5F5FA] placeholder-[#A0A3B8]/50 focus:outline-none focus:ring-2 focus:ring-[#6C63FF]"
+                  className="w-full px-4 py-3 rounded-xl bg-[#101322] border border-white/10 text-sm text-[#F5F5FA] placeholder-[#A0A3B8]/50 focus:outline-none focus:ring-2 focus:ring-[#7C3AED]"
                 />
               </div>
             </div>
@@ -308,7 +309,7 @@ export function ProjectForm({ initialData, isEdit = false }: ProjectFormProps) {
                       addFeature();
                     }
                   }}
-                  className="flex-1 px-4 py-2 rounded-xl bg-[#101322] border border-white/10 text-xs text-[#F5F5FA] focus:outline-none focus:ring-2 focus:ring-[#6C63FF]"
+                  className="flex-1 px-4 py-2 rounded-xl bg-[#101322] border border-white/10 text-xs text-[#F5F5FA] focus:outline-none focus:ring-2 focus:ring-[#7C3AED]"
                 />
                 <button
                   type="button"
@@ -402,7 +403,7 @@ export function ProjectForm({ initialData, isEdit = false }: ProjectFormProps) {
                       status: e.target.value as "DRAFT" | "PUBLISHED",
                     })
                   }
-                  className="w-full px-4 py-2 rounded-xl bg-[#101322] border border-white/10 text-xs text-[#F5F5FA] focus:outline-none focus:ring-2 focus:ring-[#6C63FF]"
+                  className="w-full px-4 py-2 rounded-xl bg-[#101322] border border-white/10 text-xs text-[#F5F5FA] focus:outline-none focus:ring-2 focus:ring-[#7C3AED]"
                 >
                   <option value="PUBLISHED">Published (Visible on site)</option>
                   <option value="DRAFT">Draft (Admin only)</option>
@@ -419,7 +420,7 @@ export function ProjectForm({ initialData, isEdit = false }: ProjectFormProps) {
                   type="checkbox"
                   checked={formData.featured}
                   onChange={(e) => setFormData({ ...formData, featured: e.target.checked })}
-                  className="w-4 h-4 accent-[#6C63FF] rounded cursor-pointer"
+                  className="w-4 h-4 accent-[#7C3AED] rounded cursor-pointer"
                 />
               </div>
 
@@ -432,7 +433,7 @@ export function ProjectForm({ initialData, isEdit = false }: ProjectFormProps) {
                   onChange={(e) =>
                     setFormData({ ...formData, displayOrder: parseInt(e.target.value) || 0 })
                   }
-                  className="w-full px-3 py-2 rounded-xl bg-[#101322] border border-white/10 text-xs text-[#F5F5FA] focus:outline-none focus:ring-2 focus:ring-[#6C63FF]"
+                  className="w-full px-3 py-2 rounded-xl bg-[#101322] border border-white/10 text-xs text-[#F5F5FA] focus:outline-none focus:ring-2 focus:ring-[#7C3AED]"
                 />
               </div>
             </div>
@@ -482,7 +483,7 @@ export function ProjectForm({ initialData, isEdit = false }: ProjectFormProps) {
                   placeholder="https://... or /images/..."
                   value={formData.coverImageUrl}
                   onChange={(e) => setFormData({ ...formData, coverImageUrl: e.target.value })}
-                  className="w-full px-3 py-1.5 rounded-lg bg-[#101322] border border-white/10 text-xs text-[#F5F5FA] font-mono focus:outline-none focus:ring-1 focus:ring-[#6C63FF]"
+                  className="w-full px-3 py-1.5 rounded-lg bg-[#101322] border border-white/10 text-xs text-[#F5F5FA] font-mono focus:outline-none focus:ring-1 focus:ring-[#7C3AED]"
                 />
               </div>
             </div>
@@ -502,7 +503,7 @@ export function ProjectForm({ initialData, isEdit = false }: ProjectFormProps) {
                       addTech();
                     }
                   }}
-                  className="flex-1 px-3 py-2 rounded-xl bg-[#101322] border border-white/10 text-xs text-[#F5F5FA] focus:outline-none focus:ring-2 focus:ring-[#6C63FF]"
+                  className="flex-1 px-3 py-2 rounded-xl bg-[#101322] border border-white/10 text-xs text-[#F5F5FA] focus:outline-none focus:ring-2 focus:ring-[#7C3AED]"
                 />
                 <button
                   type="button"
@@ -517,13 +518,13 @@ export function ProjectForm({ initialData, isEdit = false }: ProjectFormProps) {
                 {formData.technologies.map((tech) => (
                   <span
                     key={tech}
-                    className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md text-xs font-mono bg-[#101322] border border-white/10 text-[#F5F5FA]"
+                    className="inline-flex items-center gap-1 rounded-lg bg-white/5 border border-white/10 pr-1.5 text-[#F5F5FA]"
                   >
-                    <span>{tech}</span>
+                    <TechBadge name={tech} size="xs" className="border-0 bg-transparent hover:bg-transparent shadow-none" />
                     <button
                       type="button"
                       onClick={() => removeTech(tech)}
-                      className="text-[#A0A3B8] hover:text-red-400"
+                      className="text-[#A0A3B8] hover:text-red-400 text-sm leading-none px-1"
                     >
                       &times;
                     </button>
@@ -542,7 +543,7 @@ export function ProjectForm({ initialData, isEdit = false }: ProjectFormProps) {
                   placeholder="https://github.com/..."
                   value={formData.githubUrl || ""}
                   onChange={(e) => setFormData({ ...formData, githubUrl: e.target.value })}
-                  className="w-full px-3 py-2 rounded-xl bg-[#101322] border border-white/10 text-xs text-[#F5F5FA] focus:outline-none focus:ring-2 focus:ring-[#6C63FF]"
+                  className="w-full px-3 py-2 rounded-xl bg-[#101322] border border-white/10 text-xs text-[#F5F5FA] focus:outline-none focus:ring-2 focus:ring-[#7C3AED]"
                 />
               </div>
 
@@ -553,7 +554,7 @@ export function ProjectForm({ initialData, isEdit = false }: ProjectFormProps) {
                   placeholder="https://...vercel.app"
                   value={formData.liveDemoUrl || ""}
                   onChange={(e) => setFormData({ ...formData, liveDemoUrl: e.target.value })}
-                  className="w-full px-3 py-2 rounded-xl bg-[#101322] border border-white/10 text-xs text-[#F5F5FA] focus:outline-none focus:ring-2 focus:ring-[#6C63FF]"
+                  className="w-full px-3 py-2 rounded-xl bg-[#101322] border border-white/10 text-xs text-[#F5F5FA] focus:outline-none focus:ring-2 focus:ring-[#7C3AED]"
                 />
               </div>
             </div>

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { Mail, ArrowUp, ShieldCheck } from "lucide-react";
 import { Github, Linkedin } from "@/components/ui/Icons";
 
@@ -19,26 +20,32 @@ export function Footer({ settings }: FooterProps) {
   const title = settings?.professionalTitle || "Full-Stack Web Developer";
   const email = settings?.email || "abutahir2626@gmail.com";
   const github = settings?.githubUrl || "https://github.com/abu-tahir-sk";
-  const linkedin = settings?.linkedinUrl || "https://linkedin.com/in/abu-tahir-sk";
+  const linkedin = settings?.linkedinUrl || "https://www.linkedin.com/in/abu-tahir-sk-739036352";
   const footerText = settings?.footerText || "Designed & Built by Abu Tahir Sk.";
 
   return (
-    <footer className="border-t border-white/10 bg-[#0B0B14] relative overflow-hidden">
+    <footer className="border-t border-white/10 bg-[var(--bg-main)] relative overflow-hidden transition-colors duration-200">
       {/* Background ambient lighting */}
-      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[600px] h-[250px] bg-gradient-to-t from-[#6C63FF]/10 to-transparent blur-3xl pointer-events-none" />
+      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[600px] h-[250px] bg-gradient-to-t from-[#7C3AED]/10 to-transparent blur-3xl pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16 relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 lg:gap-12 mb-12">
           {/* Brand Info */}
           <div className="md:col-span-2 space-y-4">
-            <Link href="/" className="inline-flex items-center gap-3">
-              <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#6C63FF] to-[#38BDF8] p-[1.5px]">
-                <div className="w-full h-full bg-[#101322] rounded-[10px] flex items-center justify-center">
-                  <span className="font-mono font-bold text-sm text-[#F5F5FA]">&#123;AT&#125;</span>
+            <Link href="/" className="inline-flex items-center gap-3 group">
+              <div className="relative w-10 h-10 rounded-xl bg-gradient-to-br from-[#8B5CF6]/40 via-[#7C3AED]/30 to-[#38BDF8]/40 p-[1.5px] shadow-md shadow-[#8B5CF6]/20 group-hover:shadow-[#8B5CF6]/40 group-hover:scale-105 transition-all">
+                <div className="w-full h-full bg-[#101322]/95 rounded-[10px] flex items-center justify-center p-1.5 overflow-hidden">
+                  <Image
+                    src="/images/logo.png"
+                    alt="Abu Tahir Sk Logo"
+                    width={36}
+                    height={36}
+                    className="w-full h-full object-contain filter drop-shadow-[0_2px_8px_rgba(139,92,246,0.5)] group-hover:scale-110 transition-transform duration-300"
+                  />
                 </div>
               </div>
               <div>
-                <span className="font-bold text-base text-[#F5F5FA]">{name}</span>
+                <span className="font-bold text-base text-[#F5F5FA] group-hover:text-white transition-colors">{name}</span>
                 <p className="text-xs text-[#A0A3B8]">{title}</p>
               </div>
             </Link>
@@ -67,7 +74,7 @@ export function Footer({ settings }: FooterProps) {
               <a
                 href={`mailto:${email}`}
                 aria-label="Send Email"
-                className="w-9 h-9 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center text-[#A0A3B8] hover:text-[#6C63FF] hover:bg-white/10 transition-colors"
+                className="w-9 h-9 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center text-[#A0A3B8] hover:text-[#7C3AED] hover:bg-white/10 transition-colors"
               >
                 <Mail className="w-4 h-4" />
               </a>
@@ -127,9 +134,9 @@ export function Footer({ settings }: FooterProps) {
               <li>
                 <Link
                   href="/admin"
-                  className="hover:text-[#6C63FF] transition-colors inline-flex items-center gap-1.5"
+                  className="hover:text-[#7C3AED] transition-colors inline-flex items-center gap-1.5"
                 >
-                  <ShieldCheck className="w-3.5 h-3.5 text-[#6C63FF]" />
+                  <ShieldCheck className="w-3.5 h-3.5 text-[#7C3AED]" />
                   <span>Admin Dashboard</span>
                 </Link>
               </li>

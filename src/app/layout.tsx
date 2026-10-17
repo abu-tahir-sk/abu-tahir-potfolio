@@ -14,7 +14,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: {
-    default: "Abu Tahir Sk — Full-Stack Web Developer",
+    default: "Abu Tahir Sk —  Web Developer",
     template: "%s | Abu Tahir Sk",
   },
   description:
@@ -37,16 +37,25 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
     url: "https://abutahir.dev",
-    title: "Abu Tahir Sk — Full-Stack Web Developer",
+    title: "Abu Tahir Sk — Web Developer",
     description:
       "Full-Stack Web Developer building modern web applications, responsive interfaces, and digital products with React, Next.js, and PostgreSQL.",
     siteName: "Abu Tahir Sk Portfolio",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Abu Tahir Sk — Full-Stack Web Developer",
+    title: "Abu Tahir Sk — Web Developer",
     description:
       "Full-Stack Web Developer building modern web applications with React, Next.js, and PostgreSQL.",
+  },
+  icons: {
+    icon: [
+      { url: "/favicon.ico" },
+      { url: "/icon.png", type: "image/png" },
+    ],
+    apple: [
+      { url: "/apple-icon.png" },
+    ],
   },
 };
 
@@ -57,8 +66,15 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${geistSans.variable} ${geistMono.variable} dark`} suppressHydrationWarning>
+      <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `(function(){try{var t=localStorage.getItem("portfolio-theme");if(t==="light"){document.documentElement.classList.remove("dark");document.documentElement.classList.add("light");}else{document.documentElement.classList.add("dark");document.documentElement.classList.remove("light");}}catch(e){}})();`,
+          }}
+        />
+      </head>
       <body
-        className="min-h-screen bg-[#0B0B14] text-[#F5F5FA] font-sans antialiased selection:bg-[#6C63FF]/30 selection:text-white"
+        className="min-h-screen bg-[var(--bg-main)] text-[var(--text-main)] font-sans antialiased selection:bg-[#7C3AED]/30 selection:text-white transition-colors duration-200"
         suppressHydrationWarning
       >
         {children}

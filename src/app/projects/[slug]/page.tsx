@@ -13,6 +13,7 @@ import {
   Layers,
   Sparkles,
 } from "lucide-react";
+import { TechBadge } from "@/components/ui/TechBadge";
 import { Github } from "@/components/ui/Icons";
 
 interface ProjectDetailsPageProps {
@@ -71,7 +72,7 @@ export default async function ProjectDetailsPage({ params }: ProjectDetailsPageP
   });
 
   return (
-    <div className="min-h-screen flex flex-col bg-[#0B0B14] text-[#F5F5FA]">
+    <div className="min-h-screen flex flex-col bg-[var(--bg-main)] text-[var(--text-main)] transition-colors duration-200">
       <Navbar />
 
       <main className="flex-1 pt-32 pb-24">
@@ -90,11 +91,11 @@ export default async function ProjectDetailsPage({ params }: ProjectDetailsPageP
           {/* Project Header */}
           <div className="space-y-4 mb-8">
             <div className="flex flex-wrap items-center gap-2">
-              <span className="px-3 py-1 rounded-full bg-[#15182A] border border-[#6C63FF]/30 text-xs font-mono text-[#38BDF8]">
+              <span className="px-3 py-1 rounded-full bg-[#15182A] border border-[#7C3AED]/30 text-xs font-mono text-[#38BDF8]">
                 {project.category}
               </span>
               {project.featured && (
-                <span className="px-3 py-1 rounded-full bg-[#6C63FF] text-white text-xs font-semibold flex items-center gap-1 shadow-md shadow-[#6C63FF]/20">
+                <span className="px-3 py-1 rounded-full bg-gradient-to-r from-[#7C3AED] via-[#6D28D9] to-[#4F46E5] text-white text-xs font-semibold flex items-center gap-1 shadow-md shadow-[#7C3AED]/25">
                   <Sparkles className="w-3 h-3" />
                   <span>Featured Case Study</span>
                 </span>
@@ -156,7 +157,7 @@ export default async function ProjectDetailsPage({ params }: ProjectDetailsPageP
               {/* Detailed Description */}
               <div className="space-y-4">
                 <h2 className="text-2xl font-bold text-[#F5F5FA] tracking-tight flex items-center gap-2">
-                  <Layers className="w-5 h-5 text-[#6C63FF]" />
+                  <Layers className="w-5 h-5 text-[#7C3AED]" />
                   <span>Project Overview &amp; Architecture</span>
                 </h2>
                 <div className="text-sm sm:text-base text-[#A0A3B8] leading-relaxed whitespace-pre-wrap space-y-4">
@@ -219,12 +220,7 @@ export default async function ProjectDetailsPage({ params }: ProjectDetailsPageP
                   </h3>
                   <div className="flex flex-wrap gap-2">
                     {project.technologies.map((tech) => (
-                      <span
-                        key={tech}
-                        className="px-2.5 py-1 rounded-md text-xs font-mono bg-[#101322] border border-white/10 text-[#F5F5FA]"
-                      >
-                        {tech}
-                      </span>
+                      <TechBadge key={tech} name={tech} size="sm" />
                     ))}
                   </div>
                 </div>
@@ -290,7 +286,7 @@ export default async function ProjectDetailsPage({ params }: ProjectDetailsPageP
                   <Link
                     key={p.id}
                     href={`/projects/${p.slug}`}
-                    className="card-surface p-5 rounded-xl border border-white/10 group hover:border-[#6C63FF]/40 flex flex-col justify-between space-y-3"
+                    className="card-surface p-5 rounded-xl border border-white/10 group hover:border-[#7C3AED]/40 flex flex-col justify-between space-y-3"
                   >
                     <div>
                       <span className="text-[10px] font-mono text-[#38BDF8] uppercase">
@@ -303,7 +299,7 @@ export default async function ProjectDetailsPage({ params }: ProjectDetailsPageP
                         {p.shortDescription}
                       </p>
                     </div>
-                    <span className="text-xs font-semibold text-[#6C63FF] flex items-center gap-1">
+                    <span className="text-xs font-semibold text-[#7C3AED] flex items-center gap-1">
                       <span>View case study</span>
                       <ArrowUpRight className="w-3.5 h-3.5" />
                     </span>

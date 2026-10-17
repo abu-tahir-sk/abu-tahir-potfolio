@@ -6,13 +6,13 @@ export const dynamic = "force-dynamic";
 
 export default async function AdminEducationPage() {
   const educations = await prisma.education.findMany({
-    orderBy: [{ displayOrder: "asc" }, { startDate: "desc" }],
+    orderBy: [{ displayOrder: "asc" }, { passingYear: "desc" }, { createdAt: "desc" }],
   });
 
   return (
     <div className="space-y-6">
       <div className="flex items-center gap-3">
-        <div className="w-10 h-10 rounded-xl bg-[#6C63FF]/10 text-[#6C63FF] flex items-center justify-center">
+        <div className="w-10 h-10 rounded-xl bg-[#7C3AED]/10 text-[#7C3AED] flex items-center justify-center">
           <GraduationCap className="w-5 h-5" />
         </div>
         <div>

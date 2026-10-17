@@ -28,7 +28,7 @@ export function ContactSection({ settings }: ContactSectionProps) {
 
   const email = settings?.email || "abutahir2626@gmail.com";
   const github = settings?.githubUrl || "https://github.com/abu-tahir-sk";
-  const linkedin = settings?.linkedinUrl || "https://linkedin.com/in/abu-tahir-sk";
+  const linkedin = settings?.linkedinUrl || "https://www.linkedin.com/in/abu-tahir-sk-739036352";
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -74,14 +74,14 @@ export function ContactSection({ settings }: ContactSectionProps) {
   return (
     <section id="contact" className="py-24 border-t border-white/10 relative overflow-hidden">
       {/* Background glow */}
-      <div className="absolute bottom-0 right-1/4 w-[500px] h-[500px] bg-[#6C63FF]/10 blur-[130px] pointer-events-none" />
+      <div className="absolute bottom-0 right-1/4 w-[500px] h-[500px] bg-[#7C3AED]/10 blur-[130px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
           {/* Left Column: Direct info */}
           <div className="lg:col-span-5 space-y-6">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#15182A] border border-[#6C63FF]/30 text-xs font-mono text-[#38BDF8]">
-              <MessageSquare className="w-3.5 h-3.5 text-[#6C63FF]" />
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#15182A] border border-[#7C3AED]/30 text-xs font-mono text-[#38BDF8]">
+              <MessageSquare className="w-3.5 h-3.5 text-[#7C3AED]" />
               <span>LET&apos;S CONNECT</span>
             </div>
 
@@ -95,7 +95,7 @@ export function ContactSection({ settings }: ContactSectionProps) {
 
             <div className="space-y-4 pt-4 border-t border-white/10">
               <div className="flex items-center gap-3 text-sm text-[#F5F5FA]">
-                <div className="w-10 h-10 rounded-xl bg-[#15182A] border border-white/10 flex items-center justify-center text-[#6C63FF]">
+                <div className="w-10 h-10 rounded-xl bg-[#15182A] border border-white/10 flex items-center justify-center text-[#7C3AED]">
                   <Mail className="w-4 h-4" />
                 </div>
                 <div>
@@ -121,7 +121,7 @@ export function ContactSection({ settings }: ContactSectionProps) {
                     rel="noopener noreferrer"
                     className="hover:text-[#38BDF8] transition-colors font-medium"
                   >
-                    abu-tahir-sk
+                    abu-tahir-sk-739036352
                   </a>
                 </div>
               </div>
@@ -173,7 +173,7 @@ export function ContactSection({ settings }: ContactSectionProps) {
                       placeholder="e.g. Alex Johnson"
                       value={formData.name}
                       onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                      className="w-full px-4 py-2.5 rounded-xl bg-[#101322] border border-white/10 text-sm text-[#F5F5FA] placeholder-[#A0A3B8]/50 focus:outline-none focus:ring-2 focus:ring-[#6C63FF] focus:border-transparent transition-all"
+                      className="w-full px-4 py-2.5 rounded-xl bg-[#101322] border border-white/10 text-sm text-[#F5F5FA] placeholder-[#A0A3B8]/50 focus:outline-none focus:ring-2 focus:ring-[#7C3AED] focus:border-transparent transition-all"
                     />
                   </div>
 
@@ -189,7 +189,7 @@ export function ContactSection({ settings }: ContactSectionProps) {
                       placeholder="alex@company.com"
                       value={formData.email}
                       onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                      className="w-full px-4 py-2.5 rounded-xl bg-[#101322] border border-white/10 text-sm text-[#F5F5FA] placeholder-[#A0A3B8]/50 focus:outline-none focus:ring-2 focus:ring-[#6C63FF] focus:border-transparent transition-all"
+                      className="w-full px-4 py-2.5 rounded-xl bg-[#101322] border border-white/10 text-sm text-[#F5F5FA] placeholder-[#A0A3B8]/50 focus:outline-none focus:ring-2 focus:ring-[#7C3AED] focus:border-transparent transition-all"
                     />
                   </div>
                 </div>
@@ -206,7 +206,7 @@ export function ContactSection({ settings }: ContactSectionProps) {
                     placeholder="Project Inquiry / Job Opportunity / Collaboration"
                     value={formData.subject}
                     onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
-                    className="w-full px-4 py-2.5 rounded-xl bg-[#101322] border border-white/10 text-sm text-[#F5F5FA] placeholder-[#A0A3B8]/50 focus:outline-none focus:ring-2 focus:ring-[#6C63FF] focus:border-transparent transition-all"
+                    className="w-full px-4 py-2.5 rounded-xl bg-[#101322] border border-white/10 text-sm text-[#F5F5FA] placeholder-[#A0A3B8]/50 focus:outline-none focus:ring-2 focus:ring-[#7C3AED] focus:border-transparent transition-all"
                   />
                 </div>
 
@@ -222,7 +222,7 @@ export function ContactSection({ settings }: ContactSectionProps) {
                     placeholder="Provide details about your project, timeline, or position..."
                     value={formData.message}
                     onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                    className="w-full px-4 py-3 rounded-xl bg-[#101322] border border-white/10 text-sm text-[#F5F5FA] placeholder-[#A0A3B8]/50 focus:outline-none focus:ring-2 focus:ring-[#6C63FF] focus:border-transparent transition-all resize-y"
+                    className="w-full px-4 py-3 rounded-xl bg-[#101322] border border-white/10 text-sm text-[#F5F5FA] placeholder-[#A0A3B8]/50 focus:outline-none focus:ring-2 focus:ring-[#7C3AED] focus:border-transparent transition-all resize-y"
                   />
                 </div>
 

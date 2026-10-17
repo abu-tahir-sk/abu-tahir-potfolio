@@ -5,12 +5,12 @@ import { ArrowLeft, Home, Compass } from "lucide-react";
 
 export default function NotFound() {
   return (
-    <div className="min-h-screen flex flex-col bg-[#0B0B14] text-[#F5F5FA]">
+    <div className="min-h-screen flex flex-col bg-[var(--bg-main)] text-[var(--text-main)] transition-colors duration-200">
       <Navbar />
 
       <main className="flex-1 flex items-center justify-center pt-32 pb-20 px-4">
         <div className="max-w-md w-full text-center space-y-6">
-          <div className="w-16 h-16 rounded-2xl bg-[#15182A] border border-[#6C63FF]/40 mx-auto flex items-center justify-center text-[#6C63FF] shadow-lg shadow-[#6C63FF]/20">
+          <div className="w-16 h-16 rounded-2xl bg-[#15182A] border border-[#7C3AED]/40 mx-auto flex items-center justify-center text-[#7C3AED] shadow-lg shadow-[#7C3AED]/20">
             <Compass className="w-8 h-8 animate-pulse" />
           </div>
 

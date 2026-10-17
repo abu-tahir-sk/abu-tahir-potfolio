@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Search, ArrowUpRight, ExternalLink, Sparkles, FolderGit2 } from "lucide-react";
 import { Github } from "@/components/ui/Icons";
+import { TechBadge } from "@/components/ui/TechBadge";
 
 interface ProjectItem {
   id: string;
@@ -82,7 +83,7 @@ export function ProjectsExplorer({ initialProjects }: ProjectsExplorerProps) {
             placeholder="Search by title, description, or technology..."
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
-            className="w-full pl-10 pr-4 py-2.5 rounded-xl bg-[#101322] border border-white/10 text-sm text-[#F5F5FA] placeholder-[#A0A3B8]/60 focus:outline-none focus:ring-2 focus:ring-[#6C63FF] focus:border-transparent transition-all"
+            className="w-full pl-10 pr-4 py-2.5 rounded-xl bg-[#101322] border border-white/10 text-sm text-[#F5F5FA] placeholder-[#A0A3B8]/60 focus:outline-none focus:ring-2 focus:ring-[#7C3AED] focus:border-transparent transition-all"
           />
         </div>
 
@@ -95,7 +96,7 @@ export function ProjectsExplorer({ initialProjects }: ProjectsExplorerProps) {
               type="button"
               className={`px-3.5 py-1.5 rounded-lg text-xs font-medium transition-all ${
                 selectedCategory === cat
-                  ? "bg-[#6C63FF] text-white shadow-sm shadow-[#6C63FF]/30"
+                  ? "bg-gradient-to-r from-[#7C3AED] via-[#6D28D9] to-[#4F46E5] text-white shadow-sm shadow-[#7C3AED]/30"
                   : "bg-white/5 text-[#A0A3B8] hover:text-white hover:bg-white/10"
               }`}
             >
@@ -149,7 +150,7 @@ export function ProjectsExplorer({ initialProjects }: ProjectsExplorerProps) {
       {/* Projects Grid */}
       {filtered.length === 0 ? (
         <div className="card-surface p-12 rounded-2xl text-center space-y-3">
-          <FolderGit2 className="w-10 h-10 text-[#6C63FF] mx-auto opacity-70" />
+          <FolderGit2 className="w-10 h-10 text-[#7C3AED] mx-auto opacity-70" />
           <h3 className="text-lg font-bold text-[#F5F5FA]">No matching projects found</h3>
           <p className="text-xs text-[#A0A3B8] max-w-sm mx-auto">
             Try adjusting your search query or clear the filters to view all published work.
@@ -160,7 +161,7 @@ export function ProjectsExplorer({ initialProjects }: ProjectsExplorerProps) {
           {filtered.map((project) => (
             <div
               key={project.id}
-              className="card-surface rounded-2xl overflow-hidden border border-white/10 flex flex-col group hover:border-[#6C63FF]/40 transition-all duration-300"
+              className="card-surface rounded-2xl overflow-hidden border border-white/10 flex flex-col group hover:border-[#7C3AED]/40 transition-all duration-300"
             >
               {/* Cover Image */}
               <div className="relative h-52 bg-[#101322] overflow-hidden">
@@ -176,7 +177,7 @@ export function ProjectsExplorer({ initialProjects }: ProjectsExplorerProps) {
                     {project.category}
                   </span>
                   {project.featured && (
-                    <span className="px-2 py-0.5 rounded-full bg-[#6C63FF] text-white text-[11px] font-semibold flex items-center gap-1">
+                    <span className="px-2.5 py-0.5 rounded-full bg-gradient-to-r from-[#7C3AED] via-[#6D28D9] to-[#4F46E5] text-white text-[11px] font-semibold flex items-center gap-1 shadow-sm shadow-[#7C3AED]/25">
                       <Sparkles className="w-3 h-3" />
                       <span>Featured</span>
                     </span>
@@ -198,15 +199,10 @@ export function ProjectsExplorer({ initialProjects }: ProjectsExplorerProps) {
                 {/* Tech Tags */}
                 <div className="flex flex-wrap gap-1.5 pt-2">
                   {project.technologies.slice(0, 5).map((tech) => (
-                    <span
-                      key={tech}
-                      className="px-2.5 py-0.5 rounded text-[11px] font-mono bg-white/5 border border-white/10 text-[#F5F5FA]"
-                    >
-                      {tech}
-                    </span>
+                    <TechBadge key={tech} name={tech} size="xs" />
                   ))}
                   {project.technologies.length > 5 && (
-                    <span className="text-[11px] font-mono text-[#A0A3B8] self-center">
+                    <span className="text-[11px] font-mono text-[#A0A3B8] self-center px-1">
                       +{project.technologies.length - 5}
                     </span>
                   )}
