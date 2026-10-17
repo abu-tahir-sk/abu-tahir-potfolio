@@ -1,26 +1,351 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
+@layer base {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --bg-main: #0B0B14;
+    --bg-secondary: #101322;
+    --bg-card: #15182A;
+    --bg-card-hover: #1A1F36;
+    --accent-primary: #6C63FF;
+    --accent-secondary: #38BDF8;
+    --text-main: #F5F5FA;
+    --text-muted: #A0A3B8;
+    --border-subtle: rgba(255, 255, 255, 0.08);
+    --border-hover: rgba(108, 99, 255, 0.35);
+  }
+
+  * {
+    border-color: var(--border-subtle);
+  }
+
+  body {
+    background-color: var(--bg-main);
+    color: var(--text-main);
+    font-feature-settings: "rlig" 1, "calt" 1;
+    overflow-x: hidden;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0B0B14;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1F243B;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #6C63FF;
+}
+
+/* Gradients & Glows */
+.bg-gradient-glow {
+  background: radial-gradient(circle at 50% 0%, rgba(108, 99, 255, 0.15) 0%, rgba(56, 189, 248, 0.05) 50%, transparent 80%);
+}
+
+.text-gradient {
+  background: linear-gradient(135deg, #F5F5FA 0%, #6C63FF 50%, #38BDF8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-gradient-purple {
+  background: linear-gradient(135deg, #A78BFA 0%, #6C63FF 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.glow-purple {
+  box-shadow: 0 0 50px -10px rgba(108, 99, 255, 0.3);
+}
+
+.glow-blue {
+  box-shadow: 0 0 50px -10px rgba(56, 189, 248, 0.25);
+}
+
+.card-surface {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.card-surface:hover {
+  border-color: var(--border-hover);
+  background-color: var(--bg-card-hover);
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5), 0 0 25px -5px rgba(108, 99, 255, 0.15);
+}
+
+.button-primary {
+  background: linear-gradient(135deg, #6C63FF 0%, #4F46E5 100%);
+  color: #FFFFFF;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 20px rgba(108, 99, 255, 0.25);
+}
+
+.button-primary:hover {
+  background: linear-gradient(135deg, #7C74FF 0%, #5B52F2 100%);
+  box-shadow: 0 6px 25px rgba(108, 99, 255, 0.4);
+  transform: translateY(-1px);
+}
+
+.button-secondary {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #F5F5FA;
+  transition: all 0.2s ease;
+}
+
+.button-secondary:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.2);
+  transform: translateY(-1px);
+}
+
+/* ========================================================
+   Hero Section Animations & Custom Effects
+   ======================================================== */
+
+.bg-hero-grid {
+  background-size: 40px 40px;
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
+}
+
+@keyframes spin-slow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes spin-reverse-slow {
+  from {
+    transform: rotate(360deg);
+  }
+  to {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes float-slow {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes float-delayed {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    opacity: 0.35;
+    transform: scale(1) translate3d(0, 0, 0);
+  }
+  50% {
+    opacity: 0.6;
+    transform: scale(1.08) translate3d(25px, -15px, 0);
+  }
+}
+
+@keyframes pulse-glow-reverse {
+  0%, 100% {
+    opacity: 0.3;
+    transform: scale(1) translate3d(0, 0, 0);
+  }
+  50% {
+    opacity: 0.55;
+    transform: scale(1.12) translate3d(-25px, 15px, 0);
+  }
+}
+
+@keyframes sweep-light {
+  0% {
+    transform: translateX(-150%) rotate(35deg);
+    opacity: 0;
+  }
+  15% {
+    opacity: 0.7;
+  }
+  30% {
+    transform: translateX(250%) rotate(35deg);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(250%) rotate(35deg);
+    opacity: 0;
+  }
+}
+
+@keyframes particle-drift {
+  0% {
+    transform: translate3d(0, 0, 0);
+    opacity: 0;
+  }
+  20% {
+    opacity: 0.8;
+  }
+  80% {
+    opacity: 0.7;
+  }
+  100% {
+    transform: translate3d(20px, -70px, 0);
+    opacity: 0;
+  }
+}
+
+.animate-spin-slow {
+  animation: spin-slow 35s linear infinite;
+}
+
+.animate-spin-reverse-slow {
+  animation: spin-reverse-slow 42s linear infinite;
+}
+
+.animate-float-slow {
+  animation: float-slow 4.5s ease-in-out infinite;
+}
+
+.animate-float-delayed {
+  animation: float-delayed 5.5s ease-in-out infinite 0.8s;
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 14s ease-in-out infinite;
+}
+
+.animate-pulse-glow-reverse {
+  animation: pulse-glow-reverse 18s ease-in-out infinite 1s;
+}
+
+.animate-sweep-light {
+  animation: sweep-light 16s ease-in-out infinite;
+}
+
+.animate-particle-drift {
+  animation: particle-drift 8s ease-in-out infinite;
+}
+
+/* ========================================================
+   Admin Login Cosmic 3D Animations
+   ======================================================== */
+
+@keyframes grid-drift {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 0 40px;
+  }
+}
+
+@keyframes float-orb-left {
+  0%, 100% {
+    transform: translateY(0px) scale(1);
+  }
+  50% {
+    transform: translateY(-14px) scale(1.05);
+  }
+}
+
+@keyframes float-orb-right {
+  0%, 100% {
+    transform: translateY(0px) scale(1);
+  }
+  50% {
+    transform: translateY(16px) scale(1.06);
+  }
+}
+
+@keyframes arc-shimmer {
+  0%, 100% {
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 0.6;
+  }
+}
+
+.animate-grid-drift {
+  animation: grid-drift 8s linear infinite;
+}
+
+.animate-orb-left {
+  animation: float-orb-left 9s ease-in-out infinite;
+}
+
+.animate-orb-right {
+  animation: float-orb-right 10s ease-in-out infinite 1s;
+}
+
+.animate-arc-shimmer {
+  animation: arc-shimmer 7s ease-in-out infinite;
+}
+
+.login-perspective-grid {
+  transform: perspective(340px) rotateX(68deg);
+  transform-origin: center bottom;
+  background-size: 48px 48px;
+  background-image: 
+    linear-gradient(to right, rgba(147, 51, 234, 0.32) 1.5px, transparent 1.5px),
+    linear-gradient(to bottom, rgba(56, 189, 248, 0.32) 1.5px, transparent 1.5px);
+  mask-image: linear-gradient(to top, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.6) 50%, transparent 90%);
+  -webkit-mask-image: linear-gradient(to top, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.6) 50%, transparent 90%);
+}
+
+/* Reduced Motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  .animate-spin-slow,
+  .animate-spin-reverse-slow,
+  .animate-float-slow,
+  .animate-float-delayed,
+  .animate-pulse-glow,
+  .animate-pulse-glow-reverse,
+  .animate-sweep-light,
+  .animate-particle-drift,
+  .animate-grid-drift,
+  .animate-orb-left,
+  .animate-orb-right,
+  .animate-arc-shimmer {
+    animation: none !important;
+    transform: none !important;
+  }
+}
+
+
+
+/* Light Mode Overrides if toggled */
+.light {
+  --bg-main: #F8F9FA;
+  --bg-secondary: #FFFFFF;
+  --bg-card: #FFFFFF;
+  --bg-card-hover: #F1F3F5;
+  --text-main: #12141A;
+  --text-muted: #5C6370;
+  --border-subtle: rgba(0, 0, 0, 0.08);
+  --border-hover: rgba(108, 99, 255, 0.4);
+}
+
+.light body {
+  background-color: var(--bg-main);
+  color: var(--text-main);
 }
