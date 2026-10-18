@@ -1,5 +1,7 @@
 # Abu Tahir Sk — Full-Stack Developer Portfolio CMS
 
+Live link - https://abu-tahir-s.vercel.app/
+
 A modern, production-grade, dynamic Developer Portfolio and Content Management System (CMS) built for **Abu Tahir Sk**.
 
 Built with **Next.js 16 App Router**, **TypeScript**, **Tailwind CSS**, **PostgreSQL (Neon)**, **Prisma ORM**, and **Jose JWT Authentication**.
