@@ -14,7 +14,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: {
-    default: "Abu Tahir Sk —  Web Developer",
+    default: "Abu Tahir Sk",
     template: "%s | Abu Tahir Sk",
   },
   description:
@@ -37,14 +37,14 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
     url: "https://abutahir.dev",
-    title: "Abu Tahir Sk — Web Developer",
+    title: "Abu Tahir Sk",
     description:
       "Full-Stack Web Developer building modern web applications, responsive interfaces, and digital products with React, Next.js, and PostgreSQL.",
     siteName: "Abu Tahir Sk Portfolio",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Abu Tahir Sk — Web Developer",
+    title: "Abu Tahir Sk",
     description:
       "Full-Stack Web Developer building modern web applications with React, Next.js, and PostgreSQL.",
   },
